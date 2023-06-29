@@ -1,40 +1,30 @@
 <script >
+import HeaderComp from './components/HeaderComp.vue';
 
-import axios from 'axios';
-import cardComp from './components/cardComp.vue';
 
 export default{
   components:{
-    cardComp,
+    HeaderComp,
   },
   data(){
     return{
-      projects:[],
-      baseUrl:'http://127.0.0.1:8000'
+
     }
   },
   mounted(){
-  this.getProjects()
   },
 
   methods:{
-    getProjects(){
-      axios.get(`${this.baseUrl}/api/projects`)
-      .then(res => {
-        
-        this.projects=res.data.projects
-      })
-    }
   }
 }
 </script>
 
 <template>
-<div class="container">
-  <div class="row">
-    <cardComp :cardProps="e" v-for="(e, index) in projects" :key="index" class="col-12 col-md-6 col-lg-4 "/>
-  </div>
-</div>
+<HeaderComp/>
+
+<RouterView>
+</RouterView>
+
 </template>
 
 <style lang="scss">
