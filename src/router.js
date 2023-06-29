@@ -14,6 +14,16 @@ const router = createRouter({
         name: 'projects',
         component: ()=> import('./pages/ProjectList.vue')
     },
+    {
+        path: '/projects/:slug',
+        name: 'SingleProject',
+        component: ()=> import('./pages/SingleProject.vue')
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        component: ()=> import('./pages/NotFound.vue')
+    }
     ]
 });
 

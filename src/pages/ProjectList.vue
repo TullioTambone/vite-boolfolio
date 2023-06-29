@@ -32,7 +32,7 @@ export default{
 <template>
 <div class="container">
   <div class="row">
-    <RouterLink v-for="(e, index) in projects" :key="index" class="col-12 col-md-6 col-lg-4 " :to="{ name: ''}">
+    <RouterLink v-for="(e, index) in projects" :key="index" class="col-12 col-md-6 col-lg-4 " :to="{ name: 'SingleProject', params:{slug:e.slug}}">
         <cardComp :cardProps="e"/>
     </RouterLink>
   </div>
