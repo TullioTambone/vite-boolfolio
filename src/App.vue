@@ -20,13 +20,14 @@ export default{
 </script>
 
 <template>
-<HeaderComp/>
 
-<RouterView>
-</RouterView>
+  <HeaderComp/>
+  <RouterView>
+  </RouterView>
 
 </template>
 
 <style lang="scss">
 @use './style/main.scss';
+
 </style>

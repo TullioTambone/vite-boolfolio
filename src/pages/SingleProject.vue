@@ -18,9 +18,9 @@ export default{
         getSingleProject(){
             axios.get(`${this.baseUrl}/api/projects/${this.$route.params.slug}`)
             .then(res => {
+                this.project = res.data.project;
+            },error => {
                 if(res.data.success){
-                    this.project = res.data.project
-                }else{
                     this.$router.push({name: 'NotFound'})
                 }
             })
