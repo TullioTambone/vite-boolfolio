@@ -26,17 +26,6 @@ export default{
         card.style.setProperty("--mouse-y", `${y}px`);
       }
     };
-
-    document.getElementById('my-row').onmousemove = (e) => {
-      for (const card of document.getElementsByClassName("my-card")) {
-        const rect = card.getBoundingClientRect(),
-          x = e.clientX - rect.left,
-          y = e.clientY - rect.top;
-
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
-      }
-    };
   },
 
   methods:{
@@ -81,9 +70,11 @@ export default{
     flex-wrap: wrap;
     margin: 0 auto;
     gap: 4px;
+    &:hover > .my-card > .card-border{
+        opacity: 1;
+      }
     .my-card{
       width: calc(100% / 3 - 4px);
-      height: 200px;
       background-color: rgba($color: #fff, $alpha: 0.1);
       border-radius: 10px;
       position: relative;
@@ -113,7 +104,7 @@ export default{
       .card-border{
         background: radial-gradient(
           600px circle at var(--mouse-x) var(--mouse-y),
-          rgba(255, 255, 255, 0.529), transparent 40%
+          rgba(255, 255, 255, 0.526), transparent 40%
         );
         z-index: 1;
       }
@@ -122,9 +113,7 @@ export default{
         opacity: 1;
       }
 
-      &:hover .card-border{
-        opacity: 1;
-      }
+     
 
       .card-content{
         background-color: rgb(23, 23, 23);

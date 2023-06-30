@@ -35,7 +35,7 @@ main{
         margin-top: 50px;
         span{
             font-size: 20px;
-            color: rgb(68, 68, 68);
+            color: gray;
         }
         h1{
             color: white;
