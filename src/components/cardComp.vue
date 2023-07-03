@@ -8,20 +8,6 @@ export default{
             baseUrl:'http://127.0.0.1:8000'
         }
     },
-    mounted(){
-        this.getProjects()
-
-        document.querySelector("img").onmousemove = (e) => {
-            for (const img of document.getElementsByClassName("img")) {
-                const rect = img.getBoundingClientRect(),
-                x = e.clientX - rect.left,
-                y = e.clientY - rect.top;
-
-                img.style.setProperty("--mouse-x", `${x * 100}%`);
-                img.style.setProperty("--mouse-y", `${y * 100}%`);
-            }
-        };
-    },
 }
 </script>
 
@@ -42,11 +28,11 @@ export default{
 <style scoped lang="scss">
 
 
-// *:not(img){
+// *{
 //     opacity: 0;
 //     position: relative;
 //     z-index: 99;
-//     &:hover > *:not(img){
+//     &:hover > *{
 //         opacity:1;
 //         position: relative;
 //         transition: 0.7s linear;
